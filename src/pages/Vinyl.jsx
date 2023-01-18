@@ -6,7 +6,6 @@ import server_url from "../config";
 async function getData(params, setter) {
   const api = await fetch(`${server_url}/id/${params.id}`);
   const data = await api.json();
-  console.log(data);
   setter(data);
 }
 
@@ -68,7 +67,7 @@ function Vinyl() {
             <ItemContainer>
               {vinyl.Shop?.web.map((item) => {
                 return (
-                  <h4 key={item}><a target='_blank' href={item}>{item}</a></h4>
+                  <h4 key={item}><a target='_blank' rel="noreferrer" href={item}>{item}</a></h4>
                 );
               })}
             </ItemContainer>

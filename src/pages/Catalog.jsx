@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import server_url from "../config";
 import styled from 'styled-components';
@@ -8,16 +8,15 @@ import PageCounter from '../components/PageCounter';
 
 
 function Catalog() {
-  const [catalog, setCatalog] = useState([]);
+  const [response, setCatalog] = useState([]);
   const { search } = useLocation();
 
-  const getCatalog = async () => {
-    const api = await fetch(`${server_url}/search${search}`);
-    const data = await api.json();
-    setCatalog(data);
-  };
-
   useEffect(() => {
+    const getCatalog = async () => {
+      const api = await fetch(`${server_url}/search${search}`);
+      const data = await api.json();
+      setCatalog(data);
+    };
     getCatalog();
   }, [search])
 
@@ -26,7 +25,7 @@ function Catalog() {
       <Search/>
       <h3>Vinyls</h3>
       <Grid>
-        {catalog.map((item) => {
+        {response.vinyls?.map((item) => {
           return ( 
             <Card key={item._id}>
               <Link to={`/catalog/${item._id}`}>
@@ -37,7 +36,7 @@ function Catalog() {
           );
         })}
       </Grid>
-      <PageCounter />
+      <PageCounter lastPage={ response.lastPage }/>
     </Wrapper>
   );
 }

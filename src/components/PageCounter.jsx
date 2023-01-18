@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
-import server_url from "../config";
 
-function PageCounter() {
+function PageCounter({ lastPage }) {
   const { search } = useLocation();
   const navigate = useNavigate();
   let page;
@@ -17,6 +16,9 @@ function PageCounter() {
 
   const switchPage = (offset) => {
     page += offset;
+    if (lastPage && offset > 0) {
+      return;
+    }
     if (page < 1) {
       return;
     }
@@ -25,11 +27,11 @@ function PageCounter() {
       let i = search.length;
       let count = 0;
       while (i--) {
-        if (search[i] == '?') {
+        if (search[i] === '?') {
           count++;
         }
       }
-      if (count == 0) {
+      if (count === 0) {
         new_url = `${search}?page=${page}`;
       } else {
         new_url = `${search}&page=${page}`;
@@ -37,7 +39,7 @@ function PageCounter() {
     } else {
       new_url = search.split('page=')[0] + `page=${page}`;
       if (search.split('page=')[1].split('&')[1]) {
-        let [first, ...rest] = search.split('page=')[1].split('&')
+        let [_, ...rest] = search.split('page=')[1].split('&')
         rest = rest.join('&')
         new_url += '&' + rest;
       }

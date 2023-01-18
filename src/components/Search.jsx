@@ -1,11 +1,24 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+
 
 
 function Search() {
   const [input, setInput] = useState('');
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const previousSearch = (query) => {
+      if (query) {
+        query = query.replaceAll('+', ' ');
+        query = query.replaceAll('%20', ' ');
+        setInput(query);
+      }
+    };
+    previousSearch(searchParams.get('query'));
+  }, [searchParams]);
 
   const navigate = useNavigate();
   const submit = (e) => {
@@ -37,7 +50,9 @@ function Search() {
 }
 
 const FormStyle = styled.form`
-    margin: 3rem 6rem 6rem 6rem;
+    min-width: 20rem;
+    max-width: 50rem;
+    margin: 6rem auto;
     position: relative;
 
     input {

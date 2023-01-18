@@ -14,10 +14,10 @@ function Navbar() {
         <BsFillVinylFill />
         <h4>Catalog</h4>
       </SLink>
-      <SLink to={'/api'}>
+      {/* <SLink to={'/api'}>
         <AiOutlineApi />
         <h4>API</h4>
-      </SLink>
+      </SLink> */}
       <SLink to={'/about'}>
         <AiOutlineQuestion />
         <h4>About</h4>
@@ -41,8 +41,8 @@ const SLink = styled(NavLink)`
   margin: 0 1rem;
   text-decoration: none;
   background: linear-gradient(35deg, #494949, #313131);
-  width: 6rem;
-  height: 6rem;
+  min-width: 6rem;
+  min-height: 6rem;
   
   h4 {
     color: #ffffff;
