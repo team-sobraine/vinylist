@@ -15,10 +15,10 @@ function PageCounter({ lastPage }) {
   }
 
   const switchPage = (offset) => {
-    page += offset;
     if (lastPage && offset > 0) {
       return;
     }
+    page += offset;
     if (page < 1) {
       return;
     }

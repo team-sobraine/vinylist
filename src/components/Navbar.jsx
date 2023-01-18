@@ -8,11 +8,11 @@ function Navbar() {
     <List>
       <SLink to={'/'}>
         <AiOutlineHome />
-        <h4>Home</h4>
+        <h4>Početna</h4>
       </SLink>
       <SLink to={'/catalog'}>
         <BsFillVinylFill />
-        <h4>Catalog</h4>
+        <h4>Katalog</h4>
       </SLink>
       {/* <SLink to={'/api'}>
         <AiOutlineApi />
@@ -20,7 +20,7 @@ function Navbar() {
       </SLink> */}
       <SLink to={'/about'}>
         <AiOutlineQuestion />
-        <h4>About</h4>
+        <h4>O Nama</h4>
       </SLink>
     </List>
   )

@@ -44,7 +44,7 @@ function Search() {
   return (
     <FormStyle onSubmit={ submit }>
         <FaSearch />
-        <input onChange={(e) => setInput(e.target.value)} type="text" value={ input } placeholder="Search"/>
+        <input onChange={(e) => setInput(e.target.value)} type="text" value={ input } placeholder="Pretraživanje"/>
     </FormStyle>
   );
 }

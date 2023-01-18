@@ -14,7 +14,7 @@ function Random() {
 
   const getRandom = async () => {
     const check = localStorage.getItem('cache');
-    if (check) {
+    if (check && false) {
       setRandom(JSON.parse(check));
     } else {
       const api = await fetch(`${server_url}/random`);
@@ -25,11 +25,11 @@ function Random() {
   }
 
   return (
-    <div>
-      <h3>Random vinyls</h3>
+    <StyledDiv>
+      <h2>Menart</h2>
       <Splide options={{
         perPage: 2,
-        arrows: false,
+        arrows: true,
         pagination: false,
         drag: 'free',
         gap: '5rem'
@@ -50,9 +50,16 @@ function Random() {
         );
       })}
       </Splide>
-    </div>
+    </StyledDiv>
   );
 }
+
+const StyledDiv = styled.div`
+  h2 {
+    font-size: 3rem;
+    margin-left: 1rem;
+  }
+`
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;

@@ -23,7 +23,7 @@ function Catalog() {
   return (
     <Wrapper>
       <Search/>
-      <h3>Vinyls</h3>
+      <h2>Vinili</h2>
       <Grid>
         {response.vinyls?.map((item) => {
           return ( 
@@ -42,7 +42,7 @@ function Catalog() {
 }
 
 const Wrapper = styled.div`
-  h3 {
+  h2 {
     font-size: 2rem;
     margin-left: 1rem;
     margin-bottom: 2rem;

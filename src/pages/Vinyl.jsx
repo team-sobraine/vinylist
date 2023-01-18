@@ -26,7 +26,7 @@ function Vinyl() {
           <h2>{vinyl.Ime}</h2>
           <h3>{vinyl.Autor}</h3>
           <Price>
-            <h3>Price: {vinyl.PriceEUR} EUR</h3>
+            <h3>Cijena: {vinyl.PriceEUR} EUR</h3>
           </Price>
         </About>
       </WrapperMain>
