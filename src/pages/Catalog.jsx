@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from '../components/Search';
