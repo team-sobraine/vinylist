@@ -1,6 +1,5 @@
 import Random from "../components/Random";
 import Search from "../components/Search";
-
 import React from 'react';
 
 function Home() {

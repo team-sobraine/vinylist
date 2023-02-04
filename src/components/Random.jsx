@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import server_url from "../config";
 import { Link } from 'react-router-dom';
 
 function Random() {
@@ -17,7 +16,7 @@ function Random() {
     if (check && false) {
       setRandom(JSON.parse(check));
     } else {
-      const api = await fetch(`${server_url}/random`);
+      const api = await fetch(`${process.env.REACT_APP_API_SERVER}/random`);
       const data = await api.json();
       localStorage.setItem('cache', JSON.stringify(data));
       setRandom(data);

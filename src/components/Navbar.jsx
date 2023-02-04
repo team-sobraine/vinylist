@@ -1,4 +1,4 @@
-import { AiOutlineHome, AiOutlineQuestion, AiOutlineApi } from 'react-icons/ai';
+import { AiOutlineHome, AiOutlineQuestion } from 'react-icons/ai';
 import { BsFillVinylFill } from 'react-icons/bs';
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 // import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import server_url from "../config";
 import styled from 'styled-components';
 import Search from '../components/Search';
 import PageCounter from '../components/PageCounter';
-
 
 function Catalog() {
   const [response, setCatalog] = useState([]);
@@ -13,7 +11,7 @@ function Catalog() {
 
   useEffect(() => {
     const getCatalog = async () => {
-      const api = await fetch(`${server_url}/search${search}`);
+      const api = await fetch(`${process.env.REACT_APP_API_SERVER}/search${search}`);
       const data = await api.json();
       setCatalog(data);
     };

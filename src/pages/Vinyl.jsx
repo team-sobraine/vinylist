@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
-import server_url from "../config";
 
 async function getData(params, setter) {
-  const api = await fetch(`${server_url}/id/${params.id}`);
+  const api = await fetch(`${process.env.REACT_APP_API_SERVER}/id/${params.id}`);
   const data = await api.json();
   setter(data);
 }
