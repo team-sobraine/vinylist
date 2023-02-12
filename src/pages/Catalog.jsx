@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from '../components/Search';
 import PageCounter from '../components/PageCounter';
+import Navbar from "../components/Navbar";
 
 function Catalog() {
   const [response, setCatalog] = useState([]);
@@ -19,15 +20,15 @@ function Catalog() {
 
   return (
     <Wrapper>
+      <Navbar />
       <Search/>
-      <h2>Vinili</h2>
       <Grid>
         {response.vinyls?.map((item) => {
           return ( 
             <Card key={item._id}>
               <Link to={`/catalog/${item._id}`}>
-                <img src={item.Image} alt="" />
-                <h4>{item.Ime}</h4>
+                <img src={item.CoverURL} alt="" />
+                <h4>{item.Name}</h4>
               </Link>
             </Card>
           );
@@ -49,12 +50,15 @@ const Wrapper = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 3rem;
+  grid-gap: 2rem;
 `
 
 const Card = styled.div`
+  margin-bottom: -40%;
   img {
     width: 100%;
+    height: 60%;
+    object-fit: cover;
     border-radius: 2rem;
   }
   

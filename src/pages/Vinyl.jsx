@@ -20,12 +20,12 @@ function Vinyl() {
   return (
     <div>
       <WrapperMain>
-        <img src={vinyl.Image} alt="" />
+        <img src={vinyl.CoverURL} alt="" />
         <About>
-          <h2>{vinyl.Ime}</h2>
-          <h3>{vinyl.Autor}</h3>
+          <h2>{vinyl.Name}</h2>
+          <h3>{vinyl.Author}</h3>
           <Price>
-            <h3>Cijena: {vinyl.PriceEUR} EUR</h3>
+            <h3>Cijena: {vinyl.Price} EUR</h3>
           </Price>
         </About>
       </WrapperMain>

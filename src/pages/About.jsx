@@ -4,10 +4,12 @@ import { ReactComponent as AvatarDorotea } from '../avatars/AvatarDorotea.svg';
 import { ReactComponent as AvatarJan } from '../avatars/AvatarJan.svg';
 import { ReactComponent as AvatarFrane } from '../avatars/AvatarFrane.svg';
 import { GoLocation, GoMarkGithub, GoLogoGithub } from 'react-icons/go';
+import Navbar from "../components/Navbar";
 
 function About() {
   return (
     <div>
+      <Navbar />
       <Wrapper>
         <h1>O nama</h1>
         <p>

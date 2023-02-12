@@ -1,5 +1,4 @@
 import Pages from "./pages/Pages";
-import Navbar from "./components/Navbar";
 import { BrowserRouter } from 'react-router-dom';
 import ScrollReset from './components/ScrollReset';
 
@@ -8,7 +7,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <ScrollReset>
-          <Navbar />
           <Pages />
         </ScrollReset>
       </BrowserRouter>

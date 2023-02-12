@@ -1,11 +1,15 @@
 import Random from "../components/Random";
 import Search from "../components/Search";
+import TextLogo from "../components/TextLogo";
+import Navbar from "../components/Navbar";
 import React from 'react';
 
 function Home() {
   return (
     <div>
-      <Search/>
+      <TextLogo />
+      <Navbar />
+      <Search />
       <Random />
     </div>
   );

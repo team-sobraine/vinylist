@@ -39,8 +39,8 @@ function Random() {
             <Wrapper>
               <Card>
                 <Link to={`/catalog/${vinyl._id}`}>
-                  <p>{vinyl.Ime + ' - ' + vinyl.Autor}</p>
-                  <img src={vinyl.Image} alt={vinyl.Ime + ' - ' + vinyl.Autor} />
+                  <p>{vinyl.Name + ' - ' + vinyl.Author}</p>
+                  <img src={vinyl.CoverURL} alt={vinyl.Name + ' - ' + vinyl.Author} />
                   <Gradient />
                 </Link>
               </Card>
